@@ -1,0 +1,326 @@
+/* ============================================================
+   MediCloud – Design System Custom Styles
+   Tokens defined in DESIGN.md — all values derived from tokens
+   ============================================================ */
+
+/* ----- 1. Color Tokens ----- */
+:root {
+  --mc-primary: #FF8D6D;
+  --mc-primary-hover: rgba(255, 141, 109, 0.5);
+  --mc-secondary: #003A43;
+  --mc-success: #006E2F;
+  --mc-info: #00B8DB;
+  --mc-warning: #F0B100;
+  --mc-danger: #FB2C36;
+  --mc-text-primary: #394447;
+  --mc-text-secondary: #ffffff;
+  --mc-text-tertiary: #22292b;
+  --mc-text-inverse: #161b1d;
+  --mc-surface-muted: #f1f3f3;
+  --mc-surface-neutral: #d0d6d8;
+  --mc-surface-border: #e3e7e8;
+}
+
+/* ----- 2. Font ----- */
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+  color: var(--mc-text-primary);
+}
+
+/* ----- 3. Custom Text Colors ----- */
+.text-tertiary { color: var(--mc-text-tertiary) !important; }
+.text-primary { color: var(--mc-primary) !important; }
+.text-success { color: var(--mc-success) !important; }
+.text-info { color: var(--mc-info) !important; }
+.text-danger { color: var(--mc-danger) !important; }
+
+/* ----- 4. Override Bootstrap Backgrounds ----- */
+.bg-light { background-color: var(--mc-surface-muted) !important; }
+.bg-secondary { background-color: var(--mc-secondary) !important; }
+
+/* ----- 5. Override Bootstrap Badge bg colors ----- */
+.text-bg-primary {
+  background-color: var(--mc-primary) !important;
+  color: var(--mc-text-inverse) !important;
+}
+.text-bg-secondary {
+  background-color: var(--mc-secondary) !important;
+  color: var(--mc-text-secondary) !important;
+}
+
+/* ----- 6. Buttons ----- */
+/* Primary */
+.btn-primary {
+  --bs-btn-bg: var(--mc-primary);
+  --bs-btn-border-color: var(--mc-primary);
+  --bs-btn-color: var(--mc-text-inverse);
+  --bs-btn-hover-bg: rgba(255, 141, 109, 0.85);
+  --bs-btn-hover-border-color: var(--mc-primary);
+  --bs-btn-hover-color: var(--mc-text-inverse);
+  --bs-btn-active-bg: #e07a5d;
+  --bs-btn-active-border-color: #d16f52;
+  --bs-btn-active-color: var(--mc-text-inverse);
+  --bs-btn-disabled-bg: var(--mc-surface-neutral);
+  --bs-btn-disabled-border-color: #9ca8ab;
+  --bs-btn-disabled-color: #fff;
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+/* Outline Secondary */
+.btn-outline-secondary {
+  --bs-btn-color: var(--mc-secondary);
+  --bs-btn-border-color: var(--mc-secondary);
+  --bs-btn-bg: transparent;
+  --bs-btn-hover-bg: rgba(0, 58, 67, 0.1);
+  --bs-btn-hover-border-color: var(--mc-secondary);
+  --bs-btn-hover-color: var(--mc-secondary);
+  --bs-btn-active-bg: rgba(0, 58, 67, 0.15);
+  --bs-btn-active-border-color: var(--mc-secondary);
+  --bs-btn-active-color: var(--mc-secondary);
+  transition: background-color 150ms ease;
+}
+/* White variant (How It Works section) */
+.btn-white {
+  --bs-btn-bg: #fff;
+  --bs-btn-border-color: #fff;
+  --bs-btn-color: var(--mc-text-primary);
+  --bs-btn-hover-bg: var(--mc-surface-border);
+  --bs-btn-hover-border-color: var(--mc-surface-border);
+  --bs-btn-hover-color: var(--mc-text-tertiary);
+  --bs-btn-active-bg: #d0d6d8;
+  --bs-btn-active-border-color: #c5cbce;
+  transition: background-color 150ms ease;
+}
+/* All buttons: pill shape, semibold, 16px */
+.btn {
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 12px 20px;
+}
+
+/* ----- 7. Custom Spacing (Bootstrap extends up to p-5 only) ----- */
+.gap-6 { gap: 24px !important; }
+.g-6 { gap: 24px !important; }
+.gy-6 { --bs-gutter-y: 24px; }
+
+.mt-6 { margin-top: 24px !important; }
+.mt-7 { margin-top: 32px !important; }
+.mt-8 { margin-top: 40px !important; }
+.mt-10 { margin-top: 64px !important; }
+.mt-lg-10 { margin-top: 64px !important; }
+.mt-n3 { margin-top: -12px !important; }
+.mt-n6 { margin-top: -24px !important; }
+.ms-7 { margin-left: 32px !important; }
+
+.mb-6 { margin-bottom: 24px !important; }
+.mb-8 { margin-bottom: 40px !important; }
+.mb-10 { margin-bottom: 64px !important; }
+
+.mx-6 { margin-left: 24px !important; margin-right: 24px !important; }
+
+.p-6 { padding: 24px !important; }
+.p-8 { padding: 40px !important; }
+.px-4 { padding-left: 16px !important; padding-right: 16px !important; }
+.px-xl-10 { padding-left: 64px !important; padding-right: 64px !important; }
+
+.py-7 { padding-top: 32px !important; padding-bottom: 32px !important; }
+.py-8 { padding-top: 40px !important; padding-bottom: 40px !important; }
+.pt-8 { padding-top: 40px !important; }
+
+.py-lg-12 { padding-top: 96px !important; padding-bottom: 96px !important; }
+.pt-lg-10 { padding-top: 64px !important; }
+
+.me-4 { margin-right: 16px !important; }
+
+.ls-md { letter-spacing: 0.1em !important; }
+
+/* ----- 8. Feature Cards ----- */
+.feature-card .card {
+  transition: transform 150ms ease, box-shadow 150ms ease;
+  border-radius: 16px;
+}
+.feature-card .card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+.feature-icon svg {
+  stroke: var(--mc-text-tertiary);
+}
+.feature-card .card h3 {
+  font-size: 24px;
+  font-weight: 700;
+}
+.feature-card .card p {
+  font-size: 16px;
+  color: var(--mc-text-primary);
+}
+
+/* ----- 9. Step Numbers / Icon Shape (How It Works) ----- */
+.icon-shape {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-xl {
+  width: 56px;
+  height: 56px;
+  font-size: 1.5rem;
+}
+
+/* ----- 10. Floating Badge Animation ----- */
+.floating-badge {
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* ----- 11. FAQ Accordion: Chevron Rotation ----- */
+.faq-toggle {
+  cursor: pointer;
+  text-align: left;
+  font-size: inherit;
+  font-weight: 600;
+}
+.faq-toggle[aria-expanded="true"] .chevron-arrow svg {
+  transform: rotate(180deg);
+}
+.chevron-arrow svg {
+  display: block;
+  transition: transform 500ms ease;
+}
+.faq-toggle:hover {
+  opacity: 0.75;
+}
+
+/* ----- 12. Skip Link ----- */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  z-index: 1100;
+  background: var(--mc-primary);
+  color: var(--mc-text-inverse);
+  padding: 12px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 8px;
+}
+
+/* ----- 13. Focus-Visible for All Interactive Elements ----- */
+:focus-visible {
+  outline: 2px solid var(--mc-primary);
+  outline-offset: 2px;
+}
+/* Remove default Bootstrap focus ring to avoid double rings */
+.btn:focus-visible,
+.nav-link:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  box-shadow: none;
+}
+
+/* ----- 14. Avatar Initials ----- */
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.avatar-md {
+  width: 40px;
+  height: 40px;
+  font-size: 14px;
+}
+
+/* ----- 15. Pricing Card Enhancements ----- */
+.pricing-card .card {
+  border-radius: 16px;
+}
+.pricing-card .card.pricing-inner {
+  --bs-card-border-radius: 16px;
+}
+.pricing-label {
+  letter-spacing: 0.1em;
+}
+
+/* ----- 16. How It Works Section Enhancements ----- */
+.how-number {
+  line-height: 1;
+}
+.text-white-50 {
+  --bs-text-opacity: 1;
+  color: rgba(255, 255, 255, 0.65) !important;
+}
+
+/* ----- 17. Testimonials ----- */
+.testimonial-inner {
+  border-radius: 16px;
+}
+
+/* ----- 18. FAQ Items ----- */
+.faq-item {
+  border-radius: 16px;
+}
+
+/* ----- 19. Hero Badge Transparency Fix ----- */
+.hero-section .badge {
+  line-height: 1.4;
+}
+
+/* ----- 20. About Section Check Items ----- */
+.about-item svg {
+  flex-shrink: 0;
+}
+
+/* ----- 21. Reduced Motion ----- */
+@media (prefers-reduced-motion: reduce) {
+  .floating-badge,
+  .floating-badge * {
+    animation: none !important;
+  }
+  .feature-card .card {
+    transition: none !important;
+  }
+  .feature-card .card:hover {
+    transform: none !important;
+  }
+  .chevron-arrow svg {
+    transition: none !important;
+  }
+  .btn {
+    transition: none !important;
+  }
+  .faq-toggle:hover {
+    opacity: 1;
+  }
+}
+
+/* ----- 22. HD-Image Placeholder (Hero) ----- */
+.hero-img-placeholder svg {
+  border-radius: 50%;
+  max-width: 100%;
+}
+
+/* ----- 23. Responsive Tweaks ----- */
+@media (max-width: 991.98px) {
+  .hero-section .display-3 {
+    font-size: 2.5rem;
+  }
+  .display-6 {
+    font-size: 1.75rem;
+  }
+}
+
+/* ----- 24. Long-content: Card text clamping ----- */
+.feature-card .card p {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
