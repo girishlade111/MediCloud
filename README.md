@@ -315,3 +315,6 @@ This project is licensed under the **MIT License** — see the [LICENSE](LICENSE
   <br/>
   <sub>MediCloud — Making virtual care effortless</sub>
 </div>
+---
+
+Built by Girish Lade — https://ladestack.in
